@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form name="validateForm">
+        아이디:<input type="text" name="id"></br>
+        비밀번호:<input type="password" name="pw"><br/>
+        <br/>
+
+        통신사 :
+        <select name="phone">
+            <option>선택</option>
+            <option>010</option>
+            <option>011</option>
+            <option>017</option>
+            <option>018</option>
+        </select>
+        <br/>
+
+        자기소개:
+        <textarea name="intro" ></textarea>
+        <br/>
+
+        분야:
+        <input type="checkbox" name="inter" >Java
+        <input type="checkbox" name="inter" >Jsp
+        <input type="checkbox" name="inter" >JS
+        <input type="checkbox" name="inter" >Database
+
+        <br/>
+        <button type="button" id="regist">가입</button>
+
+        <!--폼객체는 document의 하위 객체이기 때문에 유일하게 name 속성으로 form 요소에서 접근이 가능합니다-->
+
+    </form>
+
+    <script>
+
+        var resist = document.getElementById("regist");
+        regist.onclick = function() {
+            
+            if(document.validateForm.id.value =='') { //공백여부나 정규표현식형식으로 검증
+
+                document.validateForm.id.focus();//해당위치에 포커스 :공백이면
+                return; //함수종료
+
+            } else if (comfirm("가입하시겠습니깡?")) {
+                document.validateForm.submit(); //js서브밋
+            }
+        }
+    </script>
+</body>
+</html>

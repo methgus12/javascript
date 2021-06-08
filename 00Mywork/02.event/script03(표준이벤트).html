@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">표준이벤트</button>
+
+    <script>
+        var result = document.getElementById("btn");
+
+        result.addEventListener("click", handleClick);
+        result.addEventListener("click", handleClick2);
+
+        function handleClick() {
+            console.log("이벤트 리스너 1");
+        }
+
+        function handleClick2() {
+
+            console.log("이벤트리스너2");
+        }
+        //표준이벤트에서만가능 
+        //여러 이벤트 등록가능!
+        
+    </script>
+    
+</body>
+</html>

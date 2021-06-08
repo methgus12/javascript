@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    table {border-collapse: collapse; border-spacing:0 ;}
+    td {border: 1px solid #777;}
+</style>
+<body>
+    <h3>이벤트 속성을 이용해서 다음을 만들어보세요 . 다만들었다면 위임방식으로 변경하세요 </h3>
+    <table>
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>내용</td>
+                <td>삭제</td>
+            </tr>
+        </thead>
+
+        <tbody class="tbody">
+            <tr>
+                <td>1</td>
+                <td>첫글</td>
+                <td>hello world</td>
+                <td><button type="button" >삭제</button></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>안뇽</td>
+                <td>hello world</td>
+                <td><button type="button" >삭제</button></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>볼트에용</td>
+                <td>hello world</td>
+                <td><button type="button" >삭제</button></td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>귀여운강아지</td>
+                <td>hello world</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+
+
+            <tr>
+                <td>5</td>
+                <td>남자아이랍니다~</td>
+                <td>hello world</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //다중이벤트 - 같은 종류에 버튼에 동일이벤트
+        // var list = document.querySelectorAll("button"); //button 선택
+        // for(var i =0; i < list.length; i++) {
+        //     list[i].onclick = function() {
+                
+        //         event.target.parentElement.parentElement.remove(); //부모로 올라가서 제거
+        //     }
+        // }
+        
+
+        //2.이벤트 위임방식!!!! 중요: 부모에 이벤트를 걸어 두면 자식이 동일한 이벤트를 위임 받는 방식
+
+        var tbody = document.querySelector(".tbody");
+        tbody.onclick = function() { //부모에 이벤트 걸어주기
+            //alert(1); 모든걸 누르면 다 뜸 : 자식에게 위임된것 을 확인
+
+            if(event.target.tagName != "BUTTON") return;//태그네임이 버튼이 아니면 실행하지마세용
+            event.target.parentElement.parentElement.remove(); //현재 누른 상태의 두단계 부모까지 지워라, 하지만 다른것을 눌러도 동작하기에 제어해줘야함 위처럼
+        }
+
+
+
+
+       
+    </script>
+    
+</body>
+</html>

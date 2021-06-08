@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    
+    <script>
+        var num1='10'; //문자 10
+        var num2=10; //숫자 10
+        
+        /*문자 10 == 숫자 10 true */
+        console.log(num1==num2); //즉 타입말고 값 자체만을 비교
+        /*===는 값 , 타입 둘다 비교해서 false*/
+        console.log(num1===num2); //false
+
+        /*!=은 값만 비교 , !==값 ,타입비교 */
+        console.log(num1 != num2); //faluse
+        console.log(num1 !== num2) //true
+
+        //undefined , null 비교
+        //둘다 값은 없지만 , 타입은 다른 상태
+        var a;
+        var b=null;
+        console.log(a, b ,a==b); //+말고도 ,로 연결가능 true 
+
+        console.log(a,b,a===b);//false
+
+        console.log(a,b,a!=b); //false
+        console.log(a,b,a!==b);//true
+
+        //정확히 비교하기위해서는 새개짜리의 연산자를 사용하는것이 더 좋음! 선호
+
+        //심힝연산자는 자바와 동일 ~
+        var x=1;
+        var y =2;
+        console.log(x > y ? 'x가 큼' : 'y가큼');
+        console.log(x==y ? '문자자체가 같음' : '문자자체가 다름');
+
+        /*자바스크립트의 배열은 [] 로 묶어주기만 하면됩니다 .
+        자바와 다르게 타입상관없이 문자 , 숫자를 섞어 가능합니다!*/
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+    </script>
+
+</body>
+</html>

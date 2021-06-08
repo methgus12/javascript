@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // JSON.parse() 문자열 -> 제이슨
+        // JSON.stringify 제이슨 -> 문자열
+
+        var arr =[
+            {id:1 , title :"hi" ,content :"kim"},
+            {id:2 , title :"bye" , content :"good"}
+        ];
+        var result = JSON.stringify(arr);
+        console.log(result);
+
+        var result2= JSON.parse(result);
+        console.log(result2);
+
+        var result3 = JSON.parse('{"id": "kkk123"}');
+        console.log(result3);
+
+        
+
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <script>
+        var a = 10;
+        var b = 20;
+
+        a = 30; //값을 변경 해주기
+        var result = a + b;
+        console.log(result); //50
+
+        var x = '20';
+        var y = 20;
+
+        console.log(x + y); //문자+문자=문자
+        console.log(20 + y);//숫자+문자= 문자 : 문자는 가장 강한 타입
+        console.log('10' + result); //문자
+
+        /*데이터 타입 number , string , boolean , undefined, null*/
+        /*+ 추가적으로 nan :숫자가 아닙니다. 라는 뜻 잘못계산할때 나타납니다. */
+
+        var nul1 = 3.14;
+        var num2 = 3;
+
+        console.log(typeof nuum1);
+        console.log(typeof num2);
+
+        var str1 = "문자";
+        console.log(typeof str1);
+
+        var bool = true; //0은 대표적으로 false를 표현하는 형식 0을 제외한 나머지는 true
+        console.log(typeof bool);
+
+        /*undefined은 변수선언을 했지만 , 초기화 하지않은 경우에 나타납니다.*/
+        var un;
+        console.log(un);
+        console.log(typeof un);
+
+        /*null 값은 저장했지만 존재하지않을때 나타납니다.*/
+        var tag = document.getElementById("xxx");
+        console.log(tag);
+        console.log(typeof tag); //object
+
+        /*자바와 연산자는 비슷하지만 부가적으로 추가된것 비교연산자 === , !== 값과 타입을 비교함*/
+
+        /*무조건 &&, || 두개써야함 &, | 불가 비트연산자임*/
+        
+
+    </script>
+</body>
+</html>

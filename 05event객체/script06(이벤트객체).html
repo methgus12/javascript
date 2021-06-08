@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="nameList"> <!--date-내가지은이름-->
+
+
+        <!--'{"키"}'-->
+        <li><a href="#" data-info='{"id" : "kkk" , "age": "20"}'>홍</a></li>
+        <li><a href="#" data-info='{"id" : "lll" , "age": "30"}'>소</a></li>
+        <li><a href="#" data-info='{"id" : "fff" , "age": "40"}'>탁</a></li>
+        <li><a href="#" data-info='{"id" : "aaa" , "age": "50"}'>윤</a></li>
+
+       
+    </ul>
+
+    <script>
+        var nameList = document.querySelector(".nameList");
+        nameList.onclick = function(){
+            event.preventDefault(); //기본이벤트를 중단
+            if(event.target.tagName != "A") return; //a가 아니라면 종료
+            // console.log(event.target.href);
+            // console.log(event.target.data-info);
+            
+            console.log(event.target.dataset["info"]); //올바른 방법
+            console.log(event.target.dataset.info); //올바른 방법2
+
+            //data-xx로 저장한 속성은 dataset의 xx값으로 저장됩니다.
+            console.log(event.target.dataset.info);
+
+            var data=JSON.parse(event.target.dataset.info);
+            console.log(data);
+
+
+
+
+        }    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        .head {
+            text-align: center;
+        }
+        .box {
+            margin: 0 auto;
+        }
+    
+        .content {
+            border: 1px solid #777;
+            overflow: hidden;
+            width: 500px;
+            height: 300px;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 8px;
+           
+        }
+    
+        .content .photo {
+            border: 1px solid #777;
+            width: 240px;
+            height: 100%;
+            float: left;
+        }
+        .content .con {
+            border: 1px solid #777;
+            width: 240px;
+            height: 100%;
+            float: right;
+        }
+
+       
+    </style>
+</head>
+<body id="backcolor">
+    <div class="head">
+        <h3>style 속성활용하기</h3>
+        <button type="button"  onclick="color()">어둡게</button>
+        <button type="button" onclick="color1()">밝게</button>
+    </div>
+   
+    <hr>
+    <div class="box" style="width: 100%;" > 
+    <div class="content">
+       <div class="photo"><img src="img/p4.jpeg" width="100%" height="100%"></div>
+       <div class="con" id="con">자바스크립트는 객체기반의 스크립트 프로그래밍 언어이다 . 이 언어는 웹브라우저 내에서 주로 사용되며 , 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다 또한 Node.js와 같은 런타임 환경과 같이 서버사이드 네트워크 프로그래밍에서도 사용되고있다. </div>
+    </div>
+</div>
+    <script>
+        var back = document.getElementById("backcolor");
+      
+      function color() {
+          back.style.backgroundColor="black";
+          back.style.color="white";
+          
+      }
+      function color1() {
+          back.style.backgroundColor="white";
+          back.style.color="black";
+      }
+      
+
+  
+    </script>
+
+
+</body>
+</html>

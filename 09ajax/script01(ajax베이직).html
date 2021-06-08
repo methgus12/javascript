@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="ajax();">에이잭스요청</button>
+    <script>
+
+        function ajax() {
+            // fetch("hi.txt").then(function(response){
+            //     response.text().then(function(a){
+            //         console.log(a);
+            //     });
+            // });
+
+            //호출을 하면 호출구문이 오랜시간이 걸릴수 있기 때문에 
+            //promise sms fetch를 사용했을때 ,상태경과를 반환해주는 약속된 객체
+
+            //1.pending(수행중)
+            //2.fullfiled (성공))
+            //3.reject (거절)
+            // var promise = fetch("hi.txt");
+            
+
+            //2.then함수는 콜백함수를 담아서 결괄르 반환하는 함수l
+            // fetch("hi.txt").then(function(response) {
+            //     if(response.status != 200) {
+            //         return;
+            //     }
+            // });
+
+            //3.response안에 text함슈는 응답데이터를 문자열의 형식으로 바꾸는 함수
+            //이 결과는 다시 promise이고 then을 이용해서 결과를 받을수있습니다.
+            // fetch("hi.txt").then(function(response){
+            //    response.text().then(function(text){
+            //        console.log(text);
+
+            //    });
+            // });
+
+            //4.비동기함수는 순서대로 실행되지않습니다.
+            fetch("hi.txt").then(func1);
+            function func1(response) {
+                console.log(1);
+            }
+            console.log(2);
+            
+        }
+    </script>
+</body>
+</html>

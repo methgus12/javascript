@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>할일 목록 만들기</h2>
+    
+    <div class="nameForm">
+        <h2 class="nameTitle"></h2>
+        <input type="text" placeholder="이름을 입력하세요">
+        <button type="button">확인</button>
+    </div>
+
+    <div class="todoForm">
+        <input type="text" placeholder="할일을 작성하세요">
+        <button type="button">확인</button>
+    </div>
+
+    <ul class="todoList">
+
+    </ul>
+
+
+    <script>
+        var nameForm = document.querySelector(".nameForm");
+        var nameTitle = nameForm.querySelector(".nameTitle");
+        var nameInput = nameForm.querySelector("input");
+        var nameButton = nameForm.querySelector("button");
+
+        nameButton.addEventListener("click", regist);
+
+        function regist() {
+            nameTitle.innerHTML = nameInput.value + "님 안녕하세요~?";
+            // nameInput.remove();
+            // nameButton.remove();
+          
+            nameInput.style.display = "none";
+            nameButton.style.display = "none";
+        }
+
+
+
+        var todoForm = document.querySelector(".todoForm");
+        var todoList = document.querySelector(".todoList");
+        var todoButton = todoForm.querySelector("button");
+        var todoInput = todoForm.querySelector("input");
+
+        todoButton.addEventListener("click", createTodo);
+
+        function createTodo() {
+
+            var text = todoInput.value;
+            todoInput.value = ""; //공백처리
+
+            //ul아래에 삽일될 li태그를 생성
+            var li = document.createElement("li");
+            li.innerHTML = text;
+
+            //버튼생성
+            var button = document.createElement("button");
+            button.innerHTML = "X";
+            button.addEventListener("click", deleteTodo);
+
+            //버튼생성2 (위)
+            var button2 = document.createElement("button");
+            button2.innerHTML = "↑";
+            button2.addEventListener("click", up);
+
+            //버튼생성3 (아래)
+            var button3 = document.createElement("button");
+            button3.innerHTML = "↓";
+            button3.addEventListener("click", down);
+
+
+            li.appendChild(button);
+            li.appendChild(button2);
+            li.appendChild(button3);
+
+            todoList.appendChild(li);
+        }
+ 
+        //삭제기능
+        function deleteTodo() {
+            //문제
+            //1. x버튼클릭시 해당버튼 요소를 판별할수 없음
+            //2. x버튼클릭시 부모요소인 li를 삭제 해야함
+            console.log(event.target)
+            event.target.parentElement.remove();
+        }
+        
+        //up기능
+        function up() {
+            //console.log(event.target)
+
+            var current = event.target.parentElement;
+            var previous = current.previousElementSibling;
+
+            if(previous == null) return; //함수종료
+
+            if(confirm("이동하실래요?")) {
+                todoList.insertBefore(current , previous);
+            }            
+
+        }
+
+        function down() {
+            var current = event.target.parentElement;
+            var next = current.nextElementSibling;
+
+            if(next == null) return; //함수종료 
+
+            if(confirm("이동하실래요?")) {
+                todoList.insertBefore( next , current );
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

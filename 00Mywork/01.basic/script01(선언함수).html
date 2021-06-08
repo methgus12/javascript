@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //사용자 정의 함수
+
+        //함수호출 
+        bolt(); //함수를 선언하기 전에 호출 가능 절차적 언어에서는 불가능
+
+        function bolt() {
+            var a=10; 
+            console.log(a);
+        }
+
+        bolt();
+        bolt();
+        bolt();
+        //위처럼 재사용도 가능
+
+
+        //둘다 가능 하지만 var a = bolt(); 안됩니다
+        var a = bolt;
+        a();
+
+
+
+
+
+
+   
+
+    
+
+    </script>
+    
+
+</body>
+</html>

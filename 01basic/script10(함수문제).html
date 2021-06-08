@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*아래함수를 익명함수로 변형하세요*/
+        //1
+        // function check() {
+        //     alert("자바스크립트 익명함수");
+        // }
+
+        var check = function() {
+            alert("자바스크립트 익명함수");
+        }
+
+        //2 
+        // function method(a) {
+        //     if(a % 2 == 0) {
+        //         alert("짝수");
+        //     } else {
+        //         alert("홀수");
+        //     }
+        // }
+
+        var method = function(a) {
+            if(a % 2 == 0) {
+                alert("짝수");
+            } else {
+                alert("홀수");
+            }
+        }
+
+        //3
+        //이름, 국어, 수학, 영어를 받아서 이름님의 평균은 : xxx"문자열을 반환하는 함수를 익명함수로 선언
+        var avg = function(x,y,z,t) {
+            var v = (y + z + t) / 3;
+
+            return x + "님의 평균은" + v;
+        } 
+    </script>
+</body>
+</html>

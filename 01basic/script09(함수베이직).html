@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <script>
+        method1(); //먼저 호출가능 : 함수의 선언부가 아래쪽에있더라도 미리 호출이가능하니다.
+        method2(1,2); //먼저호출가능
+        method2(1); //NAN 출력댐 => 함수의 매개변수 개수가 다르더라도 호출이들어감!
+        method2(1,2,3);
+        
+        var result =method3(10,20);
+        console.log(result);
+        function method1() { //반환유형 없음
+            console.log(1);
+        }
+        //method1();
+
+        function method2(a,b) { 
+            console.log("method2번호출");
+            console.log(a+b);
+
+        }
+        //리턴
+
+        function method3(a,b) {
+            console.log("method3번호출");
+
+            var result =a+b;
+            return result; 
+
+        }
+
+        //중요! 선언적함수
+        var c = method3;//()가 없음의 차이 
+        console.log(c);//함수가저장
+
+        console.log(c(1,2));
+    
+    </script>
+    
+
+
+    
+   
+
+</body>
+</html>

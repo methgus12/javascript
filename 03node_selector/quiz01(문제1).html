@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        좌석 :
+        <input type="checkbox" name="seat" value="1">1
+        <input type="checkbox" name="seat" value="2">2
+        <input type="checkbox" name="seat" value="3">3
+        <input type="checkbox" name="seat" value="4">4
+        <input type="checkbox" name="seat" value="5">5
+        <input type="checkbox" name="seat" value="6">6
+        <input type="checkbox" name="seat" value="7">7
+        <input type="checkbox" name="seat" value="8">8
+        <button type="button" id="btn">예약</Button>
+    </form>
+
+    <script>
+        /*예약버튼 클릭시에 좌석이 최소 한개이상 체크되어있지 않다면 , 경고창을 
+        띄우는 코드를 작성합니다.
+        또 , 체크된 태그의 값이있다면 리스트에저장하고 json형태의 문자열로 변경해주세요
+        */
+       var btn = document.getElementById("btn");
+      var list = new Array();
+       btn.onclick = function() {
+        
+        var checkbox = document.querySelectorAll("seat");
+
+        for(var i =0; i < checkbox.length; i++) {
+            if(checkbox[i].checked) { //true
+                bool =false;//체크박스요소가 존재한다는의미
+
+                list.push(checkbox[i].value);
+
+            } //end for
+            if(bool) { //체크요소가없음
+                alert("좌석체크는 필수입니다.");
+
+            } else {
+               var data= JSON.stringify({data:list});
+                console.log(data);
+                
+            }
+        }
+
+       }
+
+    </script>
+    
+</body>
+</html>

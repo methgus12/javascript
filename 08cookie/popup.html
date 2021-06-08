@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <div>
+        안녕하세용 ~ 
+    </div>
+
+    오늘하루 이 창을 열지않기 <input type="checkbox" >
+
+    <script>
+        var box= document.querySelector("input[type='checkbox']"); //버튼얻어오기
+
+        //쿠키생성 (쿠키이름 전달 , 쿠키값 전달)
+        createCookie("popup" , true);
+
+        //팝업창을 클로즈 
+        window.close();
+
+
+
+        
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        method();
+        method2(1, 2);
+        method2(1);
+        method2(1,2,3);
+        function method1() {
+            console.log(1);
+        }
+
+        function method2(a, b) {
+            console.log('method2번호출')
+            console.log(a + b);
+        }
+
+        function method3(a, b) {
+            console.log('method3번호출');
+            var result = a + b;
+
+            return result;
+        }
+
+        var c = method3;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <img src="img/p4.jpeg" width="200"  class ="img" style="border: 3px solid black"><br/>
+        <select class="select">
+            <option value="img/p4.jpeg">봄</option>
+            <option value="img/p1.jpeg">여름</option>
+            <option value="img/p2.jpeg">가을</option>
+            <option value="img/p3.jpeg">겨울</option>
+        </select>
+        <span>변경할 색상</span>
+        <input type="color" class="input">
+    </form>
+
+    <Script>
+        var img = document.querySelector(".img");
+       
+    var select = document.querySelector(".select");
+    select.onchange = function() {
+      
+        img.src = select.value;
+    }
+
+    var input =document.querySelector(".input");
+    input.onchange = function() {
+        img.style.border ="3px solid" + input.value;
+    }
+
+    </Script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //전역변수:페이지 전역에서 사용할 변수는 함수밖에 선언힘
+        //지역변수:특정지역안에서 선언 즉 함수안에선언 , 변수는 중괄호 밖에서도 사용가능
+
+        //둘을 나누는 기준은 함수안에서 선언된변수는 사용가능  , 밖에서 불가능
+
+        var num1=50;
+        if(num1 ===50) {
+            var num1=60;
+
+        }
+        console.log(num1); //결과 60 if , for는 안에서 선언한것도  밖에서도 사용가능
+
+        var num2 =50;
+        function add() {
+            var num2=60;
+            var num2=70;
+            //함수를 벗어나면 60,70을 사용 불가
+        }
+
+        add();
+        console.log(num2); //50 
+
+        //자바스크립트에서 변수를 나누는 기준을 함수이다
+
+    </script>
+    
+</body>
+</html>

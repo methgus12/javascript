@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .innerlist  {
+            width: 400px;
+          list-style: none;
+          display: inline-block;
+          overflow: hidden;
+
+        }
+        .innerlist > li {
+            float: left;
+            margin-right: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>다중이벤트처리</h2>
+    <div class="list">
+        <ul class="innerlist">
+            <li class="list2"><img src="img/p4.jpeg" width="80px"></li>
+            <li class="list2"><img src="img/p1.jpeg" width="80px"></li>
+            <li class="list2"><img src="img/p2.jpeg" width="80px"></li>
+            <li class="list2"><img src="img/p3.jpeg" width="80px"></li>
+        </ul>
+
+    </div>
+
+    <div class="result">
+        <img src="img/p1.jpeg" width="300px">
+    </div>
+
+   <script>
+
+       var list = document.querySelectorAll("ul li img");
+       var result =document.querySelector(".result img");
+
+       for(var i =0; i <list.length; i++) {
+           list[i].addEventListener("click" , handleImg);
+       }
+
+       function handleImg() {
+           console.log(event.target);
+           result.src = event.target.src;
+
+       }
+     
+     
+      
+   </script>
+</body>
+</html>

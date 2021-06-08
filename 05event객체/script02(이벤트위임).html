@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>이벤트 위임- 부모에 이벤트를 걸어놓으면 자식태그한테도 자동으로 전파되는 특징입니다</h3>
+    <ul class="parent">
+        <li >1.홍길동</li>
+        <li>2.이순신</li>
+        <li>3.홍길자</li>
+        <li>4.심사임당</li>
+        <li>5.김유신</li>
+    </ul>
+
+    <p class="result"></p>
+
+    <script>
+        var result = document.querySelector(".result");
+         var parent = document.querySelector(".parent");
+         parent.onclick =function() {
+             
+            console.log(event.target.tagName); //or nodename
+            //이벤트 위임방식은 사용할때 부모를 클릭해도 적용되는 문제가 있습닙다
+            //자식태그가 아니면 종료하는 방법으로 이벤트를 종료합니다
+
+            // console.log(event.target); 이벤트를 적용한 타겟
+            //console.log(event.currentTarget);실제이벤트가 걸려있는 위치
+            
+            // console.log(event.target.tagName);
+            
+            //조건문
+            //태그가LI가 아니라면 이벤트를 종료한다 
+            if(event.target.tagName != "LI") return;
+            
+            result.innerHTML = event.target.innerHTML;
+            
+         }
+
+    </script>
+    
+</body>
+</html>

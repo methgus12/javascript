@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //클로저 : 외부함수 밖에서 내부함수가 호출되더라도 외부함수의 지역변수에 접근가능한 함수
+        
+    //     function func() {
+    //         var a=1;
+    //     }
+    //     a의 지역변수는 여기서 해제
+
+    //    console.log(a); 함수안에서선언되어 사용불가
+
+
+    function func1() {
+        var a="안냥";
+
+        // var result = function() {
+        //     return a;
+        // }
+
+        //위의 코드를 이렇게 표현가능
+        return function() {
+            return a;
+        }
+       
+    }
+
+    var b= func1();
+    console.log(b); //함수자체가 반환되어옴
+    console.log(b()); //함수자체를 반환
+
+    //즉 함수안에서 선언된 값을 밖에서도 끌어 쓰기가능
+
+    
+
+
+    </script>
+    
+</body>
+</html>

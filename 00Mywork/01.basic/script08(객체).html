@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {name:"홍길동" , age:20 , arr:[1,2,3]};
+
+        //객체의 접근방법
+
+        //1.
+        console.log(person.name);
+        console.log(person.arr[1]);
+
+        //2.
+        console.log(person["name"]); //["키값"]
+        console.log(person["arr"][1]); //배열 ["키값"][인덱스번호]
+
+        var exam ={math:50 , eng:70, kor:90};
+        var kim ={name:"김길동" , exam: exam}; //키값 exam , 벨류값 exam
+
+        console.log(kim.name);
+        console.log(kim.exam); //exam의 객체자체 통째로
+
+        console.log(kim.exam.math); //exam안의 math 값
+
+        //베열
+        var arr =[
+            {id:1 , title :"hi"},
+            {id:2 , title :"bye"}
+        ];
+
+        console.log(arr); //arr전체
+        console.log(arr[0].id); //1
+        console.log(arr[0].title);//hi
+
+
+    </script>
+    
+</body>
+</html>

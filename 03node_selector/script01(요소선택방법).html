@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <form>
+        <input type="checkbox" name="inter" value="1">java
+        <input type="checkbox" name="inter" value="2">jsp
+        <input type="checkbox" name="inter" value="3">js
+        <input type="checkbox" name="inter" value="4">css
+        <input type="checkbox" name="inter" value="5">html
+        <button type="button" id="btn1">체크박스 요소확인</button>
+    
+        <br />
+    
+        <input type="radio" name="major" class="test" value="1">프로그램
+        <input type="radio" name="major" class="test" value="2">디자인
+        <input type="radio" name="major" class="test" value="3">시스템
+        <input type="radio" name="major" class="test" value="4">네트워크
+        <button type="button" id="btn2">라디오요소확인</button>
+        <br />
+    
+        <select id = "selector">
+            <option>여름</option>
+            <option>더운여름</option>
+            <option>겨울</option>
+            <option>추운겨울</option>
+    
+        </select>
+        <button type="button" id=btn3>셀렉트 요소확인</button>
+    </form>
+    
+    <script>
+        //btn1을 눌렀을때 Name inter 인 태그를 전부 선택해서 이벤트
+        var btn1 = document.getElementById("btn1");
+        var inter = document.getElementsByName("inter");
+        btn1.onclick = function() {
+            //name 이 INter인 요소를 선택 (다중)
+            for(var i = 0; i < inter.length; i++) {
+                console.log(inter[i].value);//배열안에 요소의 값
+                console.log(inter[i].checked);//배열안에 요소의 체크여부
+
+            }
+        }
+
+        //btn2 를 눌렀을때 class이 test인 태그를 전부선택
+        var btn2 = document.getElementById("btn2");    
+        btn2.onclick = function() {
+
+            var test= document.getElementsByClassName("test");//카멜표기법
+            for(var i =0 ; i < test.length; i++) {
+                console.log(test[i].value);
+                console.log(test[i].checked);
+            }
+        }
+
+        //btn3을 눌렀을때 option 태그를 선택! 
+
+        var btn3 = document.getElementById("btn3");
+
+        btn3.onclick = function() {
+            var option = document.getElementsByTagName("option") //option인것
+            console.log(option);
+        }
+</script>
+
+<script>
+    var btn3 = document.getElementById("btn3");
+    btn3.onclick = function() {
+        var selector = document.getElementById("selector");
+        var option = selector.getElementsByTagName("option");
+        //console.log(option);
+
+        for(var i =0; i < option.length; i++) {
+            console.log(option[i].value);
+            console.log(option[i].selector);
+        }
+    }
+</script>
+</body>
+</html>

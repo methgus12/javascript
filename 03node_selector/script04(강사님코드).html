@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .center {text-align: center;}
+
+        .content {
+            width: 70%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid #777;
+        }
+        .content .left {
+            padding: 5px;
+        }
+        .left {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+        }
+            
+         .inner {border: 1px solid #777; height: 300px; overflow: auto;}
+       
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center"> 
+            <h2>Style 속성활용하기</h2>
+            <button type="button" id="dark" >어둡게</button>
+            <button type="button" id="bright">밝게</button>
+        </div>
+        <hr>
+    </header>
+    
+    <section>
+        <div class="content">
+            <div class="left">
+                <div class="inner"><img src="img/p4.jpeg" width="100%" height="100%"></div>
+            </div>
+            <div class="left">
+                <div class="inner">
+                    <p>자바스크립트는 객체기반의 스크립트 프로그래밍 언어이다 .
+                        이 언어는 웹브라우저 내에서 주로 사용되며 ,
+                        다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다
+                        또한 Node.js와 같은 런타임 환경과 같이 서버사이드 네트워크 프로그래밍에서도 사용되고있다.</p>
+                        <a href="">위키백과</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script> //먼저 스크립트를 작성할때 
+       
+        var dark=document.getElementById("dark");
+        dark.onclick = function () {
+
+            var body = document.body;
+            body.style.backgroundColor="black";
+            var all = document.querySelectorAll ("h2 , p , a");
+            all[0].style.color ="white";
+            all[1].style.color ="white";
+            all[2].style.color ="white";
+            
+
+        }
+        var bright = document.getElementById("bright");
+        bright.onclick = function () {
+            var body = document.body;
+            body.style.backgroundColor="white";
+            var all = document.querySelectorAll("h2, p , a");
+
+            all[0].style.color ="black";
+            all[1].style.color ="black";
+            all[2].style.color ="black";
+        }
+    
+</script>
+
+</body>
+</html>

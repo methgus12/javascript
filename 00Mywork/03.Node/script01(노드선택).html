@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+     //스크립트코드를 위쪽에 쓰면 주의해야함 
+     //그러한 에러를 피하기위해 window.onload 이벤트 적어주기
+
+     window.onload = function() {
+
+         var btn= document.getElementById("btn");
+         btn.onclick = function() {
+             var inter= document.getElementsByName("inter");
+             console.log(inter[0]);
+             console.log(inter[1]);
+             console.log(inter[2]);
+
+         }
+         var btn2=document.getElementById("btn2");
+         btn2.onclick = function() {
+             var nice = document.getElementsByClassName("nice");
+             //console.log(nice);
+
+             for(var i=0 ; i < nice.length; i++) {
+                 console.log(nice[i]);
+             }
+         }
+     }
+
+
+
+    </script>
+    <button id="btn">체크박스요소확인</button><br>
+    <input type="checkbox" name="inter" id="1">java
+    <input type="checkbox" name="inter" id="2">jsp
+    <input type="checkbox" name="inter" id="3">js
+    <br>
+
+    <button id="btn2">라디오확인</button>
+    <input type="checkbox" name="major" class="nice" id="1">프로그램
+    <input type="checkbox" name="major" class="nice" id="2">디자인
+    <input type="checkbox" name="major" class="nice" id="3">시스템
+
+    
+</body>
+</html>

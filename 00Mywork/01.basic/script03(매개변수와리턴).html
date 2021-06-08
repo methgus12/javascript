@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <script>
+
+       //자바스크립트에서 return은 써도 안써도 무관
+
+       function func1(x) { //받고싶은 인자값 x , 꼭안에서 사용안해도됨
+
+           var sum = 0;
+       for(var i =1 ; i <= x ; i++) {
+           sum += i;
+       }
+
+       return sum; 
+    
+       }
+
+       console.log(func1(10)); //함수이름과 인자값 즉 위의 x안에 들어갈 값 
+
+       //여러개의 매개값 
+
+       function func2(x,y) {//,로 연결
+
+       var result = x+y;
+       return result;
+
+       }
+       console.log(func2(10,));
+       console.log(func2(10,20));
+
+       var func3 = function(x,y,z) {
+           return x+y+z;
+       }
+       //10 + 20 + 안녕 = 30안녕
+       console.log(func3(10,20,"안녕"));
+
+       
+       
+
+
+
+
+   </script> 
+    
+</body>
+</html>

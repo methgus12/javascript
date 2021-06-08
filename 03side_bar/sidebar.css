@@ -1,0 +1,51 @@
+*{margin: 0; padding: 0; list-style: none;}
+
+.sidenav {
+    position: fixed;
+    /*포지션 필수넣는 친구들*/
+    left: 0;
+    top: 50px;
+    width: 200px;
+    height: 100%;
+    background-color: #263238;
+    z-index: 30;
+    overflow: hidden; /*영역이 0으로 줄었을때 안쪽 a태그를 넓이에 맞추어숨김*/
+
+    transition: all 0.5s ease-in-out; /*서서히 보이기*/
+
+}
+
+@media (max-width:767px) {
+    .sidenav {
+        width: 0;
+    }
+}
+
+.sidenav a{
+    display: block;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 10px 20px; /*위아래 좌우*/
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidenav a:hover {
+    background-color: #00acac;
+}
+.menuBtn {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 50; /*최상단*/
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    background-color: #263238;
+}
+
+
