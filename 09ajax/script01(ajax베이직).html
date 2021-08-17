@@ -43,13 +43,17 @@
             // });
 
             //4.비동기함수는 순서대로 실행되지않습니다.
-            fetch("hi.txt").then(func1);
-            function func1(response) {
-                console.log(1);
-            }
-            console.log(2);
+            // fetch("hi.txt").then(func1);
+            // function func1(response) {
+            //     console.log(1);
+            // }
+            // console.log(3);
             
+           fetch("hi.txt").then(function(response){
+                console.log(response);
+            })
         }
+
     </script>
 </body>
 </html>

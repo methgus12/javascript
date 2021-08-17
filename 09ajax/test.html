@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .check-info {
+        border: 1px solid black;
+        width: 300px;
+
+        }
+    .info{
+        border: 1px solid black;
+        width: 300px;
+        margin-bottom: 30px;
+       
+    }
+   
+
+
+    
+    </style>
+</head>
+<body>
+    <h2>전동킥보드 비교하기</h2>
+    <form action="" class="check-info">
+        <input type="checkbox" value="1" name="kick">킥고잉
+        <input type="checkbox" value="2" name="kick">라임
+        <input type="checkbox" value="3" name="kick">씽씽
+        <input type="checkbox" value="4" name="kick">알파카
+        <input type="checkbox" value="5" name="kick">스윙
+
+    </form>
+
+    <div class="info">
+        <div class="company"></div>
+        <div class="price"></div>
+        <div class="place"></div>
+
+    </div>
+    <button type="button" onclick="ajax()" >전동킥보드 비교하기</button>
+
+
+    <script>
+        
+        function ajax() {
+            fetch("data.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data) {
+                var kick = document.getElementsByName("kick");
+
+                //나타낼 내용들 
+                var company = document.querySelector(".company");
+                var price =document.querySelector(".price");
+                var place= document.querySelector(".place");
+
+
+                        if(kick[0].checked ==true) {
+
+                            company.innerHTML =data[0].company;
+                            price.innerHTML = data[0].price;
+                            place.innerHTML = data[0].place;
+                            
+                        } else if(kick[1].checked ==true) {
+                            company.innerHTML =data[1].company;
+                            price.innerHTML = data[1].price;
+                            place.innerHTML = data[1].place;
+
+                        } else if(kick[2].checked ==true) {
+                            company.innerHTML =data[2].company;
+                            price.innerHTML = data[2].price;
+                            place.innerHTML = data[2].place
+                } else if(kick[3].checked ==true) {
+                            company.innerHTML =data[3].company;
+                            price.innerHTML = data[3].price;
+                            place.innerHTML = data[3].place
+            } else if(kick[4].checked ==true) {
+                            company.innerHTML =data[4].company;
+                            price.innerHTML = data[4].price;
+                            place.innerHTML = data[4].place
+        } else {
+            alert("한개이상 선택해주세요 :)");
+        }
+    
+    
+            
+            
+                
+            
+
+                // for(var i =0; i<data.length; i++) {
+                //     console.log(data[i]);
+                // }
+
+                
+            });
+
+            
+        }
+    </script>
+    
+</body>
+</html>

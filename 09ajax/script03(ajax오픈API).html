@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    6d62756d496d657439387a4f577458
+
+    <h2>서울시 강남구 공공WIFI 위치정보</h2>
+
+    <script>
+        /* 
+        http://openapi.seoul.go.kr:8088/(인증키)/xml/TbPublicWifiInfo_GN/1/5/
+        주소로 FETCH요청을 해서
+        좌표값, 실제주소를 확인하세요.
+        */
+        function getFetch() {
+
+            fetch("http://openapi.seoul.go.kr:8088/6d62756d496d657439387a4f577458/json/TbPublicWifiInfo_GN/1/1000/")
+                .then(function(response) {
+                    
+                    if(response.status != 200) {
+                        alert("네트워크 오류가 발생했습니다. 다시 시도하세요");
+                        return;
+                    } else {
+                        return response.json();
+                    }
+                })
+                .then(function(text) {
+                    
+                    var list = text.TbPublicWifiInfo_GN.row;
+                    
+                    for(var i = 0; i < list.length; i++) {
+                        console.log(list[i].X_SWIFI_ADRES1 )
+                        console.log(list[i].X_SWIFI_ADRES2 )
+                        console.log(list[i].LAT )
+                        console.log(list[i].LNT )
+
+                    }
+
+                })
+
+        }
+
+
+        (function() {
+            getFetch();
+        })();
+
+    </script>
+
+
+</body>
+</html>

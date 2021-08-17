@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="ok" onclick="check();">네이버로 이동</button>
+    
+    <script>
+
+
+
+        var ok =document.getElementById("ok");
+        
+        //이벤트리스너 이벤트 등록하는 것 
+        
+        ok.addEventListener("click" , function() { //yes 클릭시 true 
+        if(confirm("네이버로 이동하시겠습니까?")) {
+            location.href="http://www.naver.com"
+        };
+    });
+
+       
+    </script>
+</body>
+</html>

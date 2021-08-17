@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h2>안녕</h2>
+   <script>
+      function getFetch() {
+         fetch("http://openapi.seoul.go.kr:8088/6d62756d496d657439387a4f577458/xml/TbPublicWifiInfo_GN/1/20/")
+            .then(function(response){
+              //console.log(response);
+               return response.text();
+            })
+            .then(function(text) {
+               //console.log(text);
+
+               // var dom = new DOMParser()
+               // var result = dom.parseFromString(text, "text/xml");
+               // console.log(result);
+               // ==
+               return new DOMParser().parseFromString(text, "text/xml");
+            })
+            .then(function (data) {
+               console.log(data);
+               var list = data.querySelectorAll("row");
+
+               for(var i = 0; i < list.length ; i++){
+                  console.log(list[i].querySelector("X_SWIFI_ADRES1").innerHTML );
+                  console.log(list[i].querySelector("X_SWIFI_ADRES2").innerHTML );
+               }
+            })
+      }
+
+
+      (function(){
+         getFetch();
+      })();
+   </script>
+</body>
+</html>
